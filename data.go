@@ -1,22 +1,22 @@
 package main
 
 /*
-This module contains the dicts for replacing our Pinyin numerical
+This module contains the maps for replacing our Pinyin numerical
 mark-up with the actual unicode characters for each pinyin letter.
 
 There are 4 classes of replacement, 1, 2, 3, 4 which correspond to
-a length of 1-4 letters.  Pinyin does not change so hard-coding these dicts
+a length of 1-4 letters.  Pinyin does not change so hard-coding these maps
 is fine.  We don't need to put these in JSON files for that reason.
 
-When searching these dicts for matches it is super important you go in order from
+When searching these maps for matches it is super important you go in order from
 bigger dict to smaller dict.  Otherwise you'll match on subsets of the longer sequences
 and never convert the longer ones correctly.
 
-In the 4 dicts the key is what we look for in the source and the value is the
+In the 4 maps the key is what we look for in the source and the value is the
 replacement that goes into the output.
 */
 
-var ConvertDict4 = map[string]string{
+var ConvertMap4 = map[string]string{
 	// iang
 	"iang1": "iāng",
 	"iang2": "iáng",
@@ -55,7 +55,7 @@ var ConvertDict4 = map[string]string{
 	"Ueng4": "Uèng",
 }
 
-var ConvertDict3 = map[string]string{
+var ConvertMap3 = map[string]string{
 	// iao
 	"iao1": "iāo",
 	"iao2": "iáo",
@@ -130,7 +130,7 @@ var ConvertDict3 = map[string]string{
 	"Uan4": "Uàn",
 }
 
-var ConvertDict2 = map[string]string{
+var ConvertMap2 = map[string]string{
 	// ia
 	"ia1": "iā",
 	"ia2": "iá",
@@ -308,7 +308,7 @@ var ConvertDict2 = map[string]string{
 	"Ve":  "Üe",
 }
 
-var ConvertDict1 = map[string]string{
+var ConvertMap1 = map[string]string{
 	// a
 	"a1": "ā",
 	"a2": "á",
