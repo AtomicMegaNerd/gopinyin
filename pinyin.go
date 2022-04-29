@@ -69,7 +69,6 @@ func (p *pinyinConverter) DoConvert(text []string) []string {
 				// Do not forget to append the number at the end as this is part of our
 				// search!
 				search_str += string(ch)
-
 				if p.debug {
 					log.Println("buffer = ", search_str)
 				}

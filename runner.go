@@ -35,16 +35,13 @@ func getLinesFromFile(infile string) ([]string, error) {
 	}
 
 	scanner := bufio.NewScanner(file)
-
 	scanner.Split(bufio.ScanLines)
 	var text []string
-
 	for scanner.Scan() {
 		text = append(text, scanner.Text())
 	}
 
 	file.Close()
-
 	log.Printf("Opened filed %s successfully to read data for conversion", infile)
 	return text, nil
 }
@@ -59,7 +56,6 @@ func writeLinesToFile(convertedText []string, outfile string) error {
 	for _, line := range convertedText {
 		writer.WriteString(fmt.Sprintf("%s\n", line))
 	}
-
 	writer.Flush()
 	file.Close()
 
