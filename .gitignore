@@ -1,3 +1,4 @@
 gopinyin
 *.md
 *.txt
+.direnv
