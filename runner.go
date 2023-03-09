@@ -41,6 +41,7 @@ func getLinesFromFile(infile string) ([]string, error) {
 		text = append(text, scanner.Text())
 	}
 
+	file.Chown()
 	file.Close()
 	log.Printf("Opened filed %s successfully to read data for conversion", infile)
 	return text, nil
