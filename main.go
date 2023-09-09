@@ -16,6 +16,7 @@ func main() {
 	runner := NewRunner(*debugPtr, *infilePtr, *outfilePtr)
 	err := runner.ConvertPinyinText()
 	if err != nil {
-		panic(err)
+			panic(err)
+
 	}
 }
