@@ -1,13 +1,10 @@
-FROM golang:1.18.3-alpine3.15 as builder
-
-RUN apk add --no-cache git==2.34.2-r0 \
-    && rm -rf /var/cache/apk/*
+FROM golang:1.22.0-alpine3.19 as builder
 
 WORKDIR /build
 COPY . /build
 RUN go build .
 
-FROM alpine:3.18
+FROM alpine:3.19
 
 ENV USER=dockeruser
 ENV PATH=/app/bin:${PATH}
@@ -19,6 +16,5 @@ RUN mkdir -p /app/bin /app/conf \
 USER $USER
 COPY --from=builder /build/gopinyin /app/bin
 WORKDIR /data
-
 
 ENTRYPOINT ["gopinyin"]
