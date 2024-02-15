@@ -17,7 +17,7 @@
             # The packages we need for this project
             buildInputs = with pkgs;
               [
-                go_1_21
+                go_1_22
                 go-tools
                 gopls
               ];
