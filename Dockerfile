@@ -1,4 +1,4 @@
-FROM golang:1.22.0-alpine3.19 as builder
+FROM golang:1.22.3-alpine3.19 as builder
 
 WORKDIR /build
 COPY . /build
@@ -9,7 +9,6 @@ FROM alpine:3.19
 ENV USER=dockeruser
 ENV PATH=/app/bin:${PATH}
 
-# Copy our built program over and 
 RUN mkdir -p /app/bin /app/conf \
     && adduser -D $USER \
     && chown $USER:$USER /app/bin
