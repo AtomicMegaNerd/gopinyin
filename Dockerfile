@@ -1,10 +1,10 @@
-FROM golang:1.22.3-alpine3.19 as builder
+FROM golang:1.22.3.4-alpine3.20 as builder
 
 WORKDIR /build
 COPY . /build
 RUN go build .
 
-FROM alpine:3.19
+FROM alpine:3.20
 
 ENV USER=dockeruser
 ENV PATH=/app/bin:${PATH}
