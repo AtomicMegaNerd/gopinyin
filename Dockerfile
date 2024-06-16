@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM golang:1.22.3.4-alpine3.20 as builder
+=======
+FROM golang:1.22.3-alpine3.20 as builder
+>>>>>>> c28bd83effe447dd1a7feafd3dd6723c6c99862c
 
 WORKDIR /build
 COPY . /build
