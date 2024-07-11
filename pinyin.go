@@ -24,26 +24,26 @@ func runeInString(ch rune, str string) bool {
 }
 
 /*
-   This method is the meat of the program.
+This method is the meat of the program.
 
-   This is the algorithm we are going to use:
+This is the algorithm we are going to use:
 
-   For each character in each line:
-   1. Start a search string as a buffer.
-   2. If a character is an initial consonant ignore it.
-   3. If a character is a vowel or an ending consonant append it to the search
-   string.
-   4. If a character is a tone indicator (1,2,3, or 4) that's the terminator for a
-   search.  in that case, add it as the final character to the search string. Then
-   search the 4, 3, 2, or 1 letter dictionaries for a match.  If a match is found
-   replace it.
+For each character in each line:
+1. Start a search string as a buffer.
+2. If a character is an initial consonant ignore it.
+3. If a character is a vowel or an ending consonant append it to the search
+string.
+4. If a character is a tone indicator (1,2,3, or 4) that's the terminator for a
+search.  in that case, add it as the final character to the search string. Then
+search the 4, 3, 2, or 1 letter dictionaries for a match.  If a match is found
+replace it.
 
-   It is very important that we search the bigger maps before the smaller ones
-   because the smaller ones will also match on longer sequences and we do not want
-   that.
+It is very important that we search the bigger maps before the smaller ones
+because the smaller ones will also match on longer sequences and we do not want
+that.
 
-   Append modified lines to a new list called converted which the caller can use
-   to output pinyin tone marks.
+Append modified lines to a new list called converted which the caller can use
+to output pinyin tone marks.
 */
 func (p *pinyinConverter) DoConvert(text []string) []string {
 	converted := make([]string, 0)

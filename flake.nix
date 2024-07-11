@@ -1,5 +1,6 @@
 {
-  description = "This is a program representing rational numbers in Python";
+  description =
+    "A flake for my Go program to add pinyin tone marks to plain text files";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
@@ -9,9 +10,9 @@
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
       in {
-        devShell = pkgs.mkShell pkgs.mkShell {
+        devShell = pkgs.mkShell {
           # The packages we need for this project
-          buildInputs = with pkgs; [ go_1_22 go-tools gopls ];
+          buildInputs = with pkgs; [ go_1_22 go-tools gopls golangci-lint ];
         };
       });
 }
