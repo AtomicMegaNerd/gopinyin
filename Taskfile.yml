@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+
+  clean:
+    cmds:
+      - rm -f gopinyin
+
+  build:
+    deps: [check-deps]
+    cmds:
+      - go build -o gopinyin ./...
+
+  check-deps:
+    cmds:
+      - go mod tidy
+      - go mod verify
+
+  run:
+    deps: [build]
+    cmds:
+      - ./gopinyin

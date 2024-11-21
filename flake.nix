@@ -12,7 +12,13 @@
       in {
         devShell = pkgs.mkShell {
           # The packages we need for this project
-          buildInputs = with pkgs; [ go_1_23 go-tools gopls golangci-lint ];
+          buildInputs = with pkgs; [
+            go_1_23
+            go-tools
+            gopls
+            golangci-lint
+            go-task
+          ];
         };
       });
 }
